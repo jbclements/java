@@ -1,0 +1,15 @@
+#!/bin/sh
+string=? ; exec /usr/bin/env mzscheme -r "$0" "$@"
+
+(require (lib "cm.ss"))
+(current-load/use-compiled
+ (make-compilation-manager-load/use-compiled-handler))
+
+(fprintf (current-error-port) "compiling...")
+(flush-output (current-error-port))
+
+(require "syntax/parser.ss")
+(require "semantics/standard-resolver.ss")
+
+(newline (current-error-port))
+(flush-output (current-error-port))

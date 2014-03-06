@@ -1,0 +1,23 @@
+1. long-term: support for inner classes.  The parser seems to be OK with
+   these, but the type resolution stuff would need to be extended.
+   At a minimum, we'd need to update the logic that figures out where the
+   class definition lives, since the components of the fully-specified type
+   are no longer components of the path; some of them become components of
+   the filename.
+
+2. syntax/parser.ss: parser should throw exception rather than printing
+   something to stdout on error.
+
+3. semantics/resolve-source.ss: catch error thrown by parser and return
+   #f.
+
+   Depends on item #2.
+
+4. Contracts for ast structures?
+
+5. In semantics/semantic-objects.ss, esp. field%, behavior%, use symbols
+   instead of strings to represent names.
+
+6. CRITICAL: test cases!
+
+7. Remove local copy of contract-utils and return to PLaneT when feasible.

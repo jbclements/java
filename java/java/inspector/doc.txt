@@ -1,0 +1,27 @@
+_Inspector_
+_inspector_
+
+This collection provides one file:
+
+ _inspector.ss_: utilities for inspectors
+
+Currently there's just one utility in the library, but it's one I use
+all the time. Thanks to Richard Cobbe and Ryan Culpepper for the
+implementation.
+
+======================================================================
+
+> (with-public-inspector defn ...)
+
+Wraps a sequence of structure definitions in an inspector that makes
+the structures completely public.
+
+EXAMPLES -------------------------------------------------------------
+
+(print-struct #t)
+(with-public-inspector
+  (define-struct posn (x y)))
+
+(make-posn 2 3)
+=>
+#(struct:posn 2 3)
