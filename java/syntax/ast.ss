@@ -62,7 +62,7 @@
   ;; ===========================================================================
 
   (with-public-inspector
-   (without-hierarchy-contracts
+   ;(without-hierarchy-contracts
     (define-hierarchy/provide/contract
       (ast ((src (optional/c src?)))
         ;; Common
@@ -194,7 +194,9 @@
             (array-access ((array expr?)
                            (index expr?)))
             (var-access ((var name?)))))
-        ))))
+        ))
+    ;)
+   )
 
   ;; ===========================================================================
   ;; AST UTILITIES

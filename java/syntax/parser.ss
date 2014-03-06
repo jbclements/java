@@ -1,5 +1,4 @@
 (module parser mzscheme
-  ;(require (planet "contract-utils.ss" ("cobbe" "contract-utils.plt" 1)))
   (require "../contract-utils.ss")
   (require (lib "lex.ss" "parser-tools")
            (lib "yacc.ss" "parser-tools"))

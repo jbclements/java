@@ -1,5 +1,5 @@
 (module lexer mzscheme
-  (require (planet "inspector.ss" ("dherman" "inspector.plt" 1)))
+  (require "../inspector/inspector.ss")
   (require (lib "lex.ss" "parser-tools"))
   (require (prefix : (lib "lex-sre.ss" "parser-tools")))
   (require (lib "etc.ss"))

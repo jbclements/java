@@ -154,6 +154,8 @@
           ;; try resolvers in sequence, returning the first non-#f result.
           (and
            (try class-resolvers (class-filename ty ".class"))
+           
+           ;; looks like the code from PLaneT doesn't compile here..... :
            (try source-resolvers (class-filename ty ".java")))))
 
       ;; resolve-type : type-name -> (optional type<%>)

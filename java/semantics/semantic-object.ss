@@ -1,8 +1,8 @@
 (module semantic-object mzscheme
   ;(require (planet "contract-utils.ss" ("cobbe" "contract-utils.plt" 1)))
   (require "../contract-utils.ss")
-  (require (planet "inspector.ss" ("dherman" "inspector.plt" 1)))
-  (require (planet "struct.ss" ("dherman" "struct.plt" 2 1)))
+  (require "../inspector/inspector.ss")
+  (require (lib "struct.ss" "dherman-struct"))
 ;  (require (planet "class.ss" ("dherman" "struct.plt" 2 1)))
   (require (all-except (lib "list.ss" "srfi" "1") any))
   (require (lib "string.ss" "srfi" "13"))
