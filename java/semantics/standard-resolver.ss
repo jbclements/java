@@ -155,8 +155,12 @@
           (and
            (try class-resolvers (class-filename ty ".class"))
            
-           ;; looks like the code from PLaneT doesn't compile here..... :
-           (try source-resolvers (class-filename ty ".java")))))
+           ;; looks like the code from PLaneT doesn't compile here..... 
+           ;; where is source-resolvers defined? Commenting this out 
+           ;; seems like a big mistake. Ah! code in other parts of this
+           ;; file suggests that this was never fully implemented.
+           ;; Too bad.
+           #;(try source-resolvers (class-filename ty ".java")))))
 
       ;; resolve-type : type-name -> (optional type<%>)
       (define (resolve-type ty)
