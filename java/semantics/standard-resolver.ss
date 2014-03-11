@@ -1,5 +1,5 @@
 (module standard-resolver mzscheme
-  (require (planet "unzip.ss" ("dherman" "zip.plt" 2)))
+  (require file/unzip)
   (require (lib "string.ss" "srfi" "13"))
   (require (lib "list.ss" "srfi" "1"))
   (require (all-except (lib "class.ss") class-info))
@@ -35,7 +35,7 @@
     (let ([zipdir (read-zip-directory jar)])
       (lambda (entry)
         (let ([entry (path->zip-path entry)])
-          (and (zip-directory-contains? entry zipdir)
+          (and (zip-directory-contains? zipdir entry)
                (unzip-entry jar zipdir entry (lambda (p dir? in)
                                                (resolve-binary
                                                 (read-class-file in)))))))))
@@ -150,17 +150,19 @@
       ;; called when resolve-type detects a cache miss.  This method should not
       ;; change the all-packages hash tables.
       (define (load-type ty)
-        (lambda ()
-          ;; try resolvers in sequence, returning the first non-#f result.
-          (and
-           (try class-resolvers (class-filename ty ".class"))
-           
-           ;; looks like the code from PLaneT doesn't compile here..... 
-           ;; where is source-resolvers defined? Commenting this out 
-           ;; seems like a big mistake. Ah! code in other parts of this
-           ;; file suggests that this was never fully implemented.
-           ;; Too bad.
-           #;(try source-resolvers (class-filename ty ".java")))))
+        ;; unwrapping a thunk here... looks like this code may have been 
+        ;; under development...
+        
+        ;; try resolvers in sequence, returning the first non-#f result.
+        (and
+         (try class-resolvers (class-filename ty ".class"))
+         
+         ;; looks like the code from PLaneT doesn't compile here..... 
+         ;; where is source-resolvers defined? Commenting this out 
+         ;; seems like a big mistake. Ah! code in other parts of this
+         ;; file suggests that this was never fully implemented.
+         ;; Too bad.
+         #;(try source-resolvers (class-filename ty ".java"))))
 
       ;; resolve-type : type-name -> (optional type<%>)
       (define (resolve-type ty)

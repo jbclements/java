@@ -130,7 +130,8 @@
        [(TypeDeclarations)
         (make-compilation-unit (build-src 1) #f null $1)]
        [()
-        (make-compilation-unit (make-src src-file 0 0 0) #f null null)])
+        ;; yikes... fixing minor bugs at random here...
+        (make-compilation-unit (make-src src-file 0 0 0 0) #f null null)])
 
       (ImportDeclarations
        [(ImportDeclaration) (list $1)]

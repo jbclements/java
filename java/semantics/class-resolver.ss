@@ -1,5 +1,4 @@
 (module class-resolver mzscheme
-  ;(require (planet "contract-utils.ss" ("cobbe" "contract-utils.plt" 1)))
   (require "../contract-utils.ss")
   (require (lib "string.ss" "srfi" "13"))
   (require (lib "class.ss"))
