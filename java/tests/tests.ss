@@ -2,11 +2,11 @@
   (require rackunit
            rackunit/text-ui)
   (require (lib "class.ss"))
-  (require "../../java.ss")
-  (require "../../syntax/parser.ss")
-  (require "../../semantics/semantic-object.ss")
-  (require "../../semantics/class-resolver.ss")
-  (require "../../semantics/standard-resolver.ss")
+  (require "../path-params.ss")
+  (require "../syntax/parser.ss")
+  (require "../semantics/semantic-object.ss")
+  (require "../semantics/class-resolver.ss")
+  (require "../semantics/standard-resolver.ss")
 
   (define (parser-test str)
     (test-case 
