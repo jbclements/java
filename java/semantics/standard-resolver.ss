@@ -10,7 +10,7 @@
   (require "resolve-binary.ss")
   (require "resolve-source.ss")
   (require "../syntax/class-file.ss")
-  (require "../java.ss")
+  (require "../path-params.rkt")
 
   ;; ===========================================================================
   ;; DELEGATES TO PERFORM RESOLUTION

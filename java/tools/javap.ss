@@ -2,7 +2,6 @@
   (require (lib "list.ss" "srfi" "1"))
   (require (lib "string.ss" "srfi" "13"))
   (require (lib "class.ss"))
-  (require "../java.ss")
   (require "../semantics/class-resolver.ss")
   (require "../semantics/standard-resolver.ss")
   (require "../semantics/semantic-object.ss")
