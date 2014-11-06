@@ -7,4 +7,6 @@
                    "parser-tools-lib"
                    "srfi-lite-lib"))
 
-(define build-deps (list "rackunit-lib"))
+(define build-deps (list "rackunit-lib"
+                         "racket-doc"
+                         "scribble-lib"))
